@@ -1,0 +1,43 @@
+using System;
+
+namespace Application
+{
+    public static class Cuadrado
+    {
+        public static double Perimetro(double lado)
+        {
+            return 4 * lado;
+        }
+
+        public static double Area(double lado)
+        {
+            return lado * lado;
+        }
+    }
+
+    public static class PrismaCuadrangular
+    {
+        public static double Volumen(double areaBase, double altura)
+        {
+            return areaBase * altura;
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World!");
+
+        double lado = 5;
+        double altura = 10;
+        double perimetro = Application.Cuadrado.Perimetro(lado);
+        double area = Application.Cuadrado.Area(lado);
+        double volumen = Application.PrismaCuadrangular.Volumen(area, altura);
+
+        Console.WriteLine($"El perímetro de la base de un Prisma Cuadrangular de {lado}cm por lado es {perimetro}cm");
+        Console.WriteLine($"El área de la base de un Prisma Cuadrangular de {lado}cm por lado es {area}cm2");
+        Console.WriteLine($"El volumen de un Prisma Cuadrangular con un área de la base de {area}cm2 y {altura}cm de altura es {volumen}cm3");
+    }
+}
